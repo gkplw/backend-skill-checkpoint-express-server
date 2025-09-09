@@ -78,3 +78,22 @@ export const validateSearchQuery = (req, res, next) => {
   }
   next();
 };
+
+//validate update question input
+export const validateUpdateQuestionInput = (req, res, next) => {
+  const allowedFields = ["title", "description"];
+  const keys = Object.keys(req.body);
+
+  // at least 1 field is required
+  if (keys.length === 0) {
+    return res.status(400).json({ message: "Invalid request data." });
+  }
+
+  // check field that is sent is valid according to allowedFields
+  const isValid = keys.every((key) => allowedFields.includes(key));
+  if (!isValid) {
+    return res.status(400).json({ message: "Invalid request data." });
+  }
+
+  next();
+};

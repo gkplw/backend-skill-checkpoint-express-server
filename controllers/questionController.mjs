@@ -30,8 +30,8 @@ export const voteQuestion = async (req, res) => {
 
 export const updateQuestion = async (req, res) => {
   const { id } = req.params;
-  const { title, description, category } = req.body;
-  const result = await questionService.updateQuestion(id, { title, description, category });
+  const { title, description } = req.body;
+  const result = await questionService.updateQuestion(id, { title, description });
   if (!result.success) return res.status(500).json({ message: result.message });
   res.status(200).json({ message: "Question updated successfully." });
 };

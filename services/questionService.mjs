@@ -37,9 +37,9 @@ export const voteQuestion = async (id, vote) => {
   }
 };
 
-export const updateQuestion = async (id, { title, description, category }) => {
+export const updateQuestion = async (id, { title, description }) => {
   try {
-    await questionRepo.updateQuestion(id, { title, description, category });
+    await questionRepo.updateQuestion(id, { title, description });
     return { success: true };
   } catch {
     return { success: false, message: "Unable to update question." };

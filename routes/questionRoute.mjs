@@ -5,7 +5,8 @@ import {
   validateAnswerInput,
   validateVoteInput,
   validateSearchQuery,
-  checkQuestionExists
+  checkQuestionExists,
+  validateUpdateQuestionInput
 } from "../middlewares/validator.mjs";
 
 const router = Router();
@@ -14,7 +15,7 @@ router.post("/", validateQuestionInput, questionController.createQuestion);
 router.get("/", questionController.getAllQuestions);
 router.get("/search", validateSearchQuery, questionController.searchQuestions);
 router.post("/:id/vote", validateVoteInput, checkQuestionExists, questionController.voteQuestion);
-router.put("/:id", validateQuestionInput, checkQuestionExists, questionController.updateQuestion);
+router.put("/:id", validateUpdateQuestionInput, checkQuestionExists, questionController.updateQuestion);
 router.delete("/:id", checkQuestionExists, questionController.deleteQuestion);
 router.get("/:id", checkQuestionExists, questionController.getQuestionById);
 

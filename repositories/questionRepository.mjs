@@ -2,7 +2,7 @@ import connectionPool from "../utils/db.mjs";
 
 export const createQuestion = async ({ title, description, category }) => {
   await connectionPool.query(
-    "INSERT INTO questions (title, description, category) VALUES ($1, $2, $3)",
+    "INSERT INTO questions (title, description, category, created_at, updated_at) VALUES ($1, $2, $3, NOW(), NOW())",
     [title, description, category]
   );
 };
@@ -36,10 +36,16 @@ export const voteQuestion = async (id, vote) => {
   );
 };
 
-export const updateQuestion = async (id, { title, description, category }) => {
+// repository
+export const updateQuestion = async (id, { title, description }) => {
   await connectionPool.query(
-    "UPDATE questions SET title=$1, description=$2, category=$3 WHERE id=$4",
-    [title, description, category, id]
+    `UPDATE questions 
+     SET 
+       title = COALESCE($1, title),
+       description = COALESCE($2, description),
+       updated_at = NOW()
+     WHERE id = $3`,
+    [title ?? null, description ?? null, id]
   );
 };
 
