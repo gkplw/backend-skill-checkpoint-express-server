@@ -31,10 +31,10 @@ Supports creating questions, posting answers, searching, voting, and more.
 
 ## 🛠️ Tech Stack
 
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [pg](https://www.npmjs.com/package/pg) (PostgreSQL client)
+- Node.js
+- Express.js
+- PostgreSQL
+- pg
 
 ---
 
