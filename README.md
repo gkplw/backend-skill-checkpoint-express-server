@@ -29,37 +29,6 @@ Supports creating questions, posting answers, searching, voting, and more.
 
 ---
 
-## 📂 Project Structure
-
-backend-skill-checkpoint-express-server/
-│
-├── controllers/
-│   ├── answerController.mjs
-│   └── questionController.mjs
-│
-├── middlewares/
-│   └── validator.mjs
-│
-├── repositories/
-│   ├── answerRepository.mjs
-│   └── questionRepository.mjs
-│
-├── routes/
-│   ├── answerRoutes.mjs
-│   └── questionRoutes.mjs
-│
-├── services/
-│   ├── answerService.mjs
-│   └── questionService.mjs
-│
-├── utils/
-│   └── db.mjs
-│
-├── app.mjs
-└── README.md
-
----
-
 ## 🛠️ Tech Stack
 
 - [Node.js](https://nodejs.org/)
@@ -133,7 +102,3 @@ Create Question
     }
 
 ---
-
-## License
-
-MIT
