@@ -34,7 +34,6 @@ Supports creating questions, posting answers, searching, voting, and more.
 - Node.js
 - Express.js
 - PostgreSQL
-- pg
 
 ---
 
